@@ -9,10 +9,9 @@
 
 ## 📸 Screenshots
 
-| Desktop View | Mobile View |
-|--------------|-------------|
-| ![Desktop Dashboard](<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/7047d5b5-349b-4ab2-a46f-41609d0d35f5" />
-) <br> *Agent Dashboard showing real-time stats, search, and status update controls.
+
+![Desktop Dashboard](<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/7047d5b5-349b-4ab2-a46f-41609d0d35f5" />
+
 
 ---
 
@@ -22,7 +21,7 @@
 |---|---|---|
 | **Frontend** | React 18, React Router v6, Axios, Lucide Icons | Component-driven UI, lazy-loaded routes, dynamic styling |
 | **Backend** | Node.js + Express, Morgan, Helmet, CORS | REST API, rate-limiting, secure headers, API request logging |
-| **Database** | PostgreSQL (Neon / Supabase) | Relational storage, schema constraints, custom indices |
+| **Database** | PostgreSQL (Neon) | Relational storage, schema constraints, custom indices |
 | **Auth** | JSON Web Token (JWT) | Secure session management stored in `httpOnly` cookies |
 | **Styling** | Vanilla CSS Grid & Flexbox | Customized design system, Dark/Light theme toggle persistence |
 
