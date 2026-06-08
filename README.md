@@ -3,6 +3,7 @@
 > A high-performance, responsive, and secure Loan Application Portal designed for inclusive FinTech operations. Built using the **PERN stack (PostgreSQL, Express, React, Node)** with a stunning Black & Gold theme, role-based JWT authentication, and native-grade custom components.
 
 **Live Demo:** _https://fin-desk-loan-application-portal.vercel.app/
+
 **GitHub Repository:** _https://github.com/ADITYA-user18/FinDesk-Loan-Application-Portal
 
 ---
@@ -10,7 +11,7 @@
 ## 📸 Screenshots
 
 
-![Desktop Dashboard](<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/7047d5b5-349b-4ab2-a46f-41609d0d35f5" />
+<img width="1919" height="910" alt="image" src="https://github.com/user-attachments/assets/7047d5b5-349b-4ab2-a46f-41609d0d35f5" />
 
 
 ---
