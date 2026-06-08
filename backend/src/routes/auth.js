@@ -14,12 +14,17 @@ const pool     = require('../db/pool');
 const { requireAuth } = require('../middleware/authMiddleware');
 
 const COOKIE_NAME = 'vitto_token';
-const COOKIE_OPTS = {
-  httpOnly: true,       // JS cannot read this cookie — XSS protection
-  secure: process.env.NODE_ENV === 'production', // HTTPS only in prod
-  sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
-  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-};
+
+function getCookieOpts(req) {
+  const host = req.headers.host || '';
+  const isLocal = host.includes('localhost') || host.includes('127.0.0.1');
+  return {
+    httpOnly: true,
+    secure: !isLocal,
+    sameSite: isLocal ? 'lax' : 'none',
+    maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+  };
+}
 
 function signToken(userId) {
   return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: '7d' });
@@ -68,7 +73,7 @@ router.post('/register', async (req, res) => {
     const user  = result.rows[0];
     const token = signToken(user.id);
 
-    res.cookie(COOKIE_NAME, token, COOKIE_OPTS);
+    res.cookie(COOKIE_NAME, token, getCookieOpts(req));
     return res.status(201).json({
       success: true,
       message: 'Account created successfully.',
@@ -115,7 +120,7 @@ router.post('/login', async (req, res) => {
     }
 
     const token = signToken(user.id);
-    res.cookie(COOKIE_NAME, token, COOKIE_OPTS);
+    res.cookie(COOKIE_NAME, token, getCookieOpts(req));
 
     return res.status(200).json({
       success: true,
@@ -130,11 +135,7 @@ router.post('/login', async (req, res) => {
 
 // ─── POST /api/auth/logout ───────────────────────────────────
 router.post('/logout', (req, res) => {
-  res.clearCookie(COOKIE_NAME, {
-    httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
-    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
-  });
+  res.clearCookie(COOKIE_NAME, getCookieOpts(req));
   return res.status(200).json({ success: true, message: 'Logged out.' });
 });
 
