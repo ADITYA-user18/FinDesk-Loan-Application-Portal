@@ -32,17 +32,17 @@ export default function Navbar() {
             <>
               {!isAgent && (
                 <NavLink to="/apply" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
-                  <FilePlus size={14} /> Apply
+                  <FilePlus size={16} /> <span>Apply</span>
                 </NavLink>
               )}
               {isAgent && (
                 <NavLink to="/dashboard" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
-                  <LayoutDashboard size={14} /> Dashboard
+                  <LayoutDashboard size={16} /> <span>Dashboard</span>
                 </NavLink>
               )}
               {!isAgent && (
                 <NavLink to="/my-applications" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>
-                  <ClipboardList size={14} /> My Applications
+                  <ClipboardList size={16} /> <span>My Applications</span>
                 </NavLink>
               )}
             </>
@@ -59,12 +59,12 @@ export default function Navbar() {
           {isAuthenticated ? (
             <div className="user-pill">
               <div className="user-avatar">{user?.name?.charAt(0)?.toUpperCase()}</div>
-              <div style={{ lineHeight: 1.2 }}>
+              <div className="user-info" style={{ lineHeight: 1.2 }}>
                 <div className="user-name">{user?.name}</div>
                 <div className="user-role">{user?.role}</div>
               </div>
-              <button onClick={handleLogout} className="btn btn-ghost btn-sm" style={{ marginLeft: 2 }}>
-                <LogOut size={13} /> Logout
+              <button onClick={handleLogout} className="btn btn-ghost btn-sm btn-logout" style={{ marginLeft: 2 }}>
+                <LogOut size={14} /> <span>Logout</span>
               </button>
             </div>
           ) : (
