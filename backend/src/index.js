@@ -36,9 +36,18 @@ app.use(helmet());
 
 // ─── CORS ────────────────────────────────────────────────────
 const allowedOrigins = [
-  process.env.FRONTEND_URL || 'http://localhost:5173',
+  'http://localhost:5173',
   'http://localhost:3000',
+  'https://fin-desk-loan-application-portal.vercel.app',
+  'https://findesk-loan-application-portal.vercel.app',
 ];
+
+if (process.env.FRONTEND_URL) {
+  const envOrigins = process.env.FRONTEND_URL.split(',').map(o => o.trim().replace(/\/$/, ''));
+  envOrigins.forEach(origin => {
+    if (!allowedOrigins.includes(origin)) allowedOrigins.push(origin);
+  });
+}
 
 app.use(cors({
   origin: (origin, callback) => {
