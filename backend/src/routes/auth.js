@@ -77,6 +77,7 @@ router.post('/register', async (req, res) => {
     return res.status(201).json({
       success: true,
       message: 'Account created successfully.',
+      token,
       user: { id: user.id, name: user.name, mobile: user.mobile, role: user.role },
     });
   } catch (err) {
@@ -125,6 +126,7 @@ router.post('/login', async (req, res) => {
     return res.status(200).json({
       success: true,
       message: 'Logged in successfully.',
+      token,
       user: { id: user.id, name: user.name, mobile: user.mobile, role: user.role },
     });
   } catch (err) {

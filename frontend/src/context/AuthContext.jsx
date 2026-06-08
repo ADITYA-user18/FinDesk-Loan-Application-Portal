@@ -17,18 +17,25 @@ export function AuthProvider({ children }) {
 
   const register = useCallback(async (data) => {
     const res = await API.post('/api/auth/register', data);
+    if (res.data.token) {
+      localStorage.setItem('findesk_token', res.data.token);
+    }
     setUser(res.data.user);
     return res.data;
   }, []);
 
   const login = useCallback(async (mobile, password) => {
     const res = await API.post('/api/auth/login', { mobile, password });
+    if (res.data.token) {
+      localStorage.setItem('findesk_token', res.data.token);
+    }
     setUser(res.data.user);
     return res.data;
   }, []);
 
   const logout = useCallback(async () => {
     await API.post('/api/auth/logout');
+    localStorage.removeItem('findesk_token');
     setUser(null);
   }, []);
 
