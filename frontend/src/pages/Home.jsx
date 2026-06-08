@@ -40,7 +40,7 @@ export default function HomePage() {
           </h1>
 
           <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', maxWidth: 560, margin: '0 auto 40px', lineHeight: 1.8 }}>
-            Vitto helps local-language preferred borrowers complete KYC, apply for loans,
+            Fin Desk helps local-language preferred borrowers complete KYC, apply for loans,
             and repay — all without friction.
           </p>
 
