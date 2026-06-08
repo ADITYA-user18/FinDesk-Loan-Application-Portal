@@ -30,7 +30,7 @@ export function PageLoader() {
     <div style={{ display:'flex', alignItems:'center', justifyContent:'center', minHeight:'100vh' }}>
       <div style={{ textAlign:'center' }}>
         <div className="spinner" style={{ width:56, height:56, margin:'0 auto 16px' }} />
-        <p style={{ color:'var(--text-muted)', fontFamily:"'Space Grotesk', sans-serif" }}>Loading Vitto Portal...</p>
+        <p style={{ color:'var(--text-muted)', fontFamily:"'Space Grotesk', sans-serif" }}>Loading FinDesk Portal...</p>
       </div>
     </div>
   );

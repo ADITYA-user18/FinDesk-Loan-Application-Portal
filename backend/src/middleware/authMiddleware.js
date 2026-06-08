@@ -14,7 +14,7 @@ const pool = require('../db/pool');
  * Attaches req.user = { id, name, mobile, role }
  */
 async function requireAuth(req, res, next) {
-  let token = req.cookies?.vitto_token;
+  let token = req.cookies?.findesk_token;
 
   if (!token && req.headers.authorization) {
     const parts = req.headers.authorization.split(' ');
@@ -71,7 +71,7 @@ function requireAgent(req, res, next) {
  * Used by endpoints that behave differently for auth vs anon.
  */
 async function optionalAuth(req, res, next) {
-  let token = req.cookies?.vitto_token;
+  let token = req.cookies?.findesk_token;
 
   if (!token && req.headers.authorization) {
     const parts = req.headers.authorization.split(' ');

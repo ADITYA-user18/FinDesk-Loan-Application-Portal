@@ -1,5 +1,5 @@
 // ============================================================
-// src/index.js — Vitto Loan Portal Backend Entry Point
+// src/index.js — FinDesk Loan Portal Backend Entry Point
 //
 // Tech: Node.js + Express + PostgreSQL
 // Security: helmet, CORS, rate limiting
@@ -61,7 +61,7 @@ app.use(cors({
 }));
 
 // ─── Cookie parser ─────────────────────────────────────────
-app.use(cookieParser()); // Parses cookies so req.cookies.vitto_token works
+app.use(cookieParser()); // Parses cookies so req.cookies.findesk_token works
 
 // ─── Body parsing ────────────────────────────────────────────
 app.use(express.json({ limit: '10kb' }));
@@ -84,7 +84,7 @@ app.use(limiter);
 app.get('/health', (req, res) => {
   res.status(200).json({
     success: true,
-    service: 'Vitto Loan Portal API',
+    service: 'FinDesk Loan Portal API',
     status: 'healthy',
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || 'development',
@@ -117,7 +117,7 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`
   ╔════════════════════════════════════════╗
-  ║   Vitto Loan Portal API — Running      ║
+  ║   FinDesk Loan Portal API — Running    ║
   ║   Port: ${PORT}                           ║
   ║   Env:  ${(process.env.NODE_ENV || 'development').padEnd(30)}  ║
   ╚════════════════════════════════════════╝

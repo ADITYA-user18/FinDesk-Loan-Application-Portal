@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { Landmark } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
 
@@ -47,9 +48,9 @@ export default function RegisterPage() {
       <div className="container">
         <div style={{ maxWidth: 480, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: 32 }}>
-            <div style={{ width: 52, height: 52, borderRadius: 12, background: 'linear-gradient(135deg,#3b82f6,#10b981)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: '1.4rem', color: '#fff', margin: '0 auto 16px', boxShadow: '0 0 24px rgba(59,130,246,0.3)' }}>V</div>
+            <div style={{ width: 52, height: 52, borderRadius: 12, background: 'linear-gradient(135deg, var(--primary) 0%, #d4af37 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px', boxShadow: '0 0 24px rgba(255, 215, 0, 0.2)' }}><Landmark size={24} color="#000" strokeWidth={2.5} /></div>
             <h1 style={{ fontFamily: "'Space Grotesk',sans-serif", fontSize: '1.6rem', fontWeight: 700, marginBottom: 6 }}>Create your account</h1>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Join Vitto's loan application platform</p>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem' }}>Join FinDesk's loan application platform</p>
           </div>
 
           <div className="card">

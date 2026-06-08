@@ -13,7 +13,7 @@ const router   = express.Router();
 const pool     = require('../db/pool');
 const { requireAuth } = require('../middleware/authMiddleware');
 
-const COOKIE_NAME = 'vitto_token';
+const COOKIE_NAME = 'findesk_token';
 
 function getCookieOpts(req) {
   const host = req.headers.host || '';

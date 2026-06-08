@@ -1,7 +1,7 @@
 {
-  "name": "vitto-loan-portal-backend",
+  "name": "findesk-loan-portal-backend",
   "version": "1.0.0",
-  "description": "Vitto Loan Application Portal - Backend API",
+  "description": "FinDesk Loan Application Portal - Backend API",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",

@@ -1,5 +1,5 @@
 -- ============================================================
--- Vitto Loan Application Portal
+-- FinDesk Loan Application Portal
 -- Migration: 001_init.sql
 -- Description: Initial schema – creates the applications table
 -- ============================================================

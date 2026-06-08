@@ -18,7 +18,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar-inner">
-        {/* Logo — Landmark icon, clearly different from Vitto's "V" */}
+        {/* Logo — Landmark icon representing FinDesk */}
         <NavLink to="/" className="navbar-logo">
           <div className="navbar-logo-icon">
             <Landmark size={18} strokeWidth={2.5} color="#000" />
